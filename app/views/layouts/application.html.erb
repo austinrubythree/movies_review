@@ -10,12 +10,15 @@
   </head>
 
   <body>
-    <%# <% flash.each do |name, msg| %>
-    <%# <%= content_tag(:div, msg, class: "alert alert-info") %>
-    <%# <% end %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    </li>
+    <%= render 'layouts/headers' %>
+    <div class ="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-info") %>
+      <% end %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      </li>
     <%= yield %>
+    </div>
   </body>
 </html>
